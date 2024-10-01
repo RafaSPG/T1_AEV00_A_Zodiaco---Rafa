@@ -1,3 +1,4 @@
+import java.sql.Array;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -23,6 +24,8 @@ public class Main {
             System.out.println("Formato de fecha incorrecto");
             return;
         }
+
+
 
         String sz = obtenersz(fecha);
         System.out.println("Tu signo zodiacal es: " + sz);
@@ -68,30 +71,39 @@ public class Main {
 
     public static String obtenerFrase () {
 
-        String fraseFinal = "";
-
+        String[] fraseFinal = new String[5];
+        String enviar = "";
         Random r = new Random();
 
         int numero = r.nextInt(5+1);
 
+        fraseFinal[0] = "Hoy gracias a la Luna tendras un buen dia";
+        fraseFinal[1] = "Hoy sera tu mejor dia";
+        fraseFinal[2] = "Mañana ser tu dia";
+        fraseFinal[3] = "Maña puedes morir";
+        fraseFinal[4] = "Feliz dia";
+
+
         switch (numero) {
 
-
-
             case 1:
-                fraseFinal = "Hoy gracias a la Luna tendras un buen dia";
+                enviar = fraseFinal[0];
                 break;
             case 2:
-                fraseFinal = "Hoy sera tu mejor dia";
+                enviar = fraseFinal[1];
+
                 break;
             case 3:
-                fraseFinal = "Mañana ser tu dia";
+                enviar = fraseFinal[2];
+
                 break;
             case 4:
-                fraseFinal = "Maña puedes morir";
+                enviar = fraseFinal[3];
+
                 break;
             case 5:
-                fraseFinal = "Feliz dia";
+                enviar = fraseFinal[4];
+
                 break;
 
         }
@@ -99,7 +111,7 @@ public class Main {
 
 
 
-        return fraseFinal;
+        return enviar;
     }
 
 }
